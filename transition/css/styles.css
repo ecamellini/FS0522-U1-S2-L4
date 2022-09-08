@@ -1,0 +1,52 @@
+body,
+html {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  background-color: slategray
+}
+
+section {
+  padding: 100px;
+  transform-style: preserve-3d;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: orangered;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#square1 {
+
+  transition: background-color 2s, transform 1s;
+  /*
+  Stessa cosa si può fare così:
+  transition-property: background-color, transform;
+  transition-duration: 2s, 1s;
+  */
+}
+
+#square1:hover {
+  background-color: orange;
+  transform: rotate(30deg);
+}
+
+#square2 {
+  transform: rotateY(45deg) rotateX(45deg) scale(2) translateX(200px);
+  transition-property: opacity;
+  transition-duration: 2.5s;
+  transition-delay: 1s;
+  transition-timing-function: linear;
+}
+
+#square2:hover {
+  opacity: 0;
+}

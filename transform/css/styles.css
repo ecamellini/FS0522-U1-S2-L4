@@ -1,0 +1,40 @@
+body,
+html {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  background-color: slategray
+}
+
+section {
+  padding: 100px;
+  transform-style: preserve-3d;
+  perspective: 100px;
+  perspective-origin: 50px 50px;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: orangered;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#square1 {
+  /* stessa cosa che fare rotateZ(45deg); */
+  transform: translateZ(-200px);
+}
+
+#square2 {
+  transform: rotateY(45deg) rotateX(45deg) scale(2) translateX(200px);
+}
+
+#square3 {
+  transform: skewY(30deg)
+}

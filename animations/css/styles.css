@@ -1,0 +1,120 @@
+body,
+html {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  background-color: slategray
+}
+
+section {
+  padding: 100px;
+  transform-style: preserve-3d;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: orangered;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#square1,
+#square2 {
+  animation-name: animazione-square-1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+#loading-container {
+  width: 500px;
+  height: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#loading-bar {
+  height: 100%;
+  border-radius: 10px;
+  animation-name: loading;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  background-color: green;
+}
+
+#loading-bar-2 {
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  animation-name: loading-2;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 68%, rgba(252, 176, 69, 1) 100%);
+  animation-timing-function: linear;
+  position: relative;
+  top: -30px;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+    background-color: red;
+  }
+
+  30% {
+    background-color: yellow;
+  }
+
+  60% {
+    background-color: lime;
+  }
+
+  90% {
+    background-color: green;
+  }
+
+  100% {
+    width: 100%;
+    background-color: green;
+  }
+}
+
+@keyframes loading-2 {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animazione-square-1 {
+  from {
+    background-color: orangered;
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  50% {
+    background-color: orange;
+    transform: translateX(100px) rotate(180deg);
+  }
+
+  to {
+    background-color: orangered;
+    transform: translateX(0px) rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+
+  #square1,
+  #square2 {
+    animation-name: none;
+  }
+}
