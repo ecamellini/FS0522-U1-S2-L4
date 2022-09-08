@@ -1,0 +1,60 @@
+body,
+html {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  background-color: slategray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  border-radius: 10px;
+  background-color: orangered;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Dò un nome ai vari blocchi */
+#grid-1 .block:nth-child(1) {
+  grid-area: header
+}
+
+#grid-1 .block:nth-child(2) {
+  grid-area: sidebar
+}
+
+#grid-1 .block:nth-child(3) {
+  grid-area: main
+}
+
+#grid-1 .block:nth-child(4) {
+  grid-area: footer
+}
+
+#grid-1 {
+  width: 800px;
+  height: 400px;
+  display: grid;
+  
+  /* Definisco come sono disposti chiamandoli per nome */
+  grid-template-areas: 
+    "header header" /* Riga 1 */
+    "sidebar main" /* Riga 2 */
+    "sidebar main" /* Riga 3 */
+    "sidebar main" /* Riga 4 */
+    "footer footer"; /* Riga 5 */
+  column-gap: 2px;
+  row-gap: 2px;
+
+  /* Proprietà di allineamento delle colonne e delle righe rispettivamente */
+  /* Si può usare anche con griglie fatte senza questa tecnica delle grid-area */
+  justify-content: space-between;
+  align-content: space-around;
+}
